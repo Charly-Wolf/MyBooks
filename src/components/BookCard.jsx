@@ -1,4 +1,4 @@
-const BookDetail = ({ image, title, author, status, genre }) => {
+const BookCard = ({ image, title, author, status, genre }) => {
   return (
     <div>
       <h2>{title}</h2>
@@ -9,4 +9,4 @@ const BookDetail = ({ image, title, author, status, genre }) => {
     </div>
   )
 }
-export default BookDetail
+export default BookCard
