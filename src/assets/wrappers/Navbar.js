@@ -37,7 +37,9 @@ const Wrapper = styled.nav`
     color: var(--primary-500);
   }
 
-  /* Active */
+  .active {
+    color: var(--primary-500);
+  }
 
   @media (min-width: 768px) {
     .nav-center {
