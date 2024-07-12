@@ -24,7 +24,9 @@ const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <section className='page'>
+        <Outlet />
+      </section>
       {/* <h1>My Book List</h1>
       <BookList books={books} /> */}
     </>
