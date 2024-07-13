@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/BookCard.js'
 
 const BookCard = ({ id, image, title, author, genre }) => {
+  
   return (
     <Wrapper>
       <div className='img-container'>

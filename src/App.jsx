@@ -9,6 +9,7 @@ import {
 } from './pages'
 
 import { loader as landingLoader } from './pages/Landing'
+import { loader as singleBookLoader } from './pages/Book'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/book/:id',
+        errorElement: <SinglePageError />,
+        loader: singleBookLoader,
         element: <Book />,
       },
       {
