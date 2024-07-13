@@ -6,7 +6,9 @@ const BookCard = ({ id, image, title, author, genre }) => {
   return (
     <Wrapper>
       <div className='img-container'>
-        <img src={image} alt={title} className='img' />
+        <Link to={`/book/${id}`}>
+          <img src={image} alt={title} className='img' />
+        </Link>
       </div>
       <div className='footer'>
         <h4>{title}</h4>
