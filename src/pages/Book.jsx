@@ -1,18 +1,35 @@
 import { useLoaderData, Link } from 'react-router-dom'
 import axios from 'axios'
 import Wrapper from '../assets/wrappers/BookPage.js'
+import { useQuery } from '@tanstack/react-query'
 
 const singleBookUrl = 'http://localhost:3000/books/'
 
-export const loader = async ({ params }) => {
-  const { id } = params
-  const { data } = await axios.get(`${singleBookUrl}${id}`)
-
-  return { id, data }
+const singleBookQuery = id => {
+  return {
+    queryKey: ['book', id],
+    queryFn: async () => {
+      const { data } = await axios.get(`${singleBookUrl}${id}`)
+      return data
+    },
+  }
 }
 
+// loader returns a function
+export const loader =
+  queryClient =>
+  async ({ params }) => {
+    const { id } = params
+
+    await queryClient.ensureQueryData(singleBookQuery(id)) // Check if we have the data in the cache, if not -> fetch it
+
+    return { id }
+  }
+
 const Book = () => {
-  const { id, data: singleBook } = useLoaderData()
+  const { id } = useLoaderData()
+
+  const { data: singleBook } = useQuery(singleBookQuery(id))
 
   const { title, author, genre, image, description } = singleBook
 
