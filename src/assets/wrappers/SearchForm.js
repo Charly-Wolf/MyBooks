@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   .form {
     display: grid;
     grid-template-columns: 1fr auto;
