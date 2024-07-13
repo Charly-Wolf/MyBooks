@@ -14,6 +14,7 @@ const SearchForm = ({ searchTerm }) => {
           id='search'
           className='form-input'
           defaultValue={searchTerm}
+          placeholder='Search for a title'
         />
         <button type='submit' disabled={isSubmitting} className='btn'>
           {isSubmitting ? 'searching...' : 'search'}
