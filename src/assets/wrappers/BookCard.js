@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   }
 
   img {
-    height: 30rem;
+    max-height: 20rem;
+    object-fit: contain;
     border-top-left-radius: var(--borderRadius);
     border-top-right-radius: var(--borderRadius);
   }
