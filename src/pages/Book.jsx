@@ -3,7 +3,7 @@ import axios from 'axios'
 import Wrapper from '../assets/wrappers/BookPage.js'
 import { useQuery } from '@tanstack/react-query'
 
-const singleBookUrl = 'http://localhost:3000/books/'
+const singleBookUrl = `${import.meta.env.VITE_API_URL}/books/`
 
 const singleBookQuery = id => {
   return {

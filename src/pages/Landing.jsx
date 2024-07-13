@@ -4,7 +4,7 @@ import BookList from '../components/BookList'
 import SearchForm from '../components/SearchForm'
 import { useQuery } from '@tanstack/react-query'
 
-const booksSearchUrl = 'http://localhost:3000/books?s='
+const booksSearchUrl = `${import.meta.env.VITE_API_URL}/books?s=`
 
 const searchBooksQuery = searchTerm => {
   return {
